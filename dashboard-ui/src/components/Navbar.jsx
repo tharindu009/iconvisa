@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/react.svg'
-import '../css/navbar.css'
+// import '../css/navbar.css'
 import { MdNotifications } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdSettings } from "react-icons/md";
@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div className="d-flex justify-content-between align-items-center text-sm py-2 border-bottom border-secondary">
-            <nav className="navbar navbar-light bg-primary">
+            <nav className="navbar navbar-light">
                 <div className="container-fluid d-flex align-items-center gap-2 small">
                     <a className="navbar-brand" href="#">
                         <img src={logo} alt="Logo" height="30" className="d-inline-block align-top" />
