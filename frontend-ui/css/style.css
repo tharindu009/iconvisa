@@ -367,6 +367,24 @@
     padding: 100px 0 60px 0;
 }
 
+.bg-breadcrumb-ielts {
+    background: linear-gradient(rgba(0, 58, 102, 0.9), rgba(0, 58, 102, 0.8)), url(../img/ielts-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-size: cover;
+    padding: 100px 0 60px 0;
+}
+
+.bg-breadcrumb-ticket {
+    background: linear-gradient(rgba(0, 58, 102, 0.9), rgba(0, 58, 102, 0.8)), url(../img/ticket-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-size: cover;
+    padding: 100px 0 60px 0;
+}
+
 /*** Single Page Hero Header End ***/
 
 
