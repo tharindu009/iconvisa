@@ -208,25 +208,25 @@
                     <div class="input-group w-80 mx-auto d-flex">
                         <form id="consultationForm">
                             <div class="col-12 mb-4">
-                                <input type="text" class="form-control p-3" placeholder="Full name"
+                                <input type="text" name="fullName" class="form-control p-3" placeholder="Full name"
                                     aria-describedby="search-icon-1">
                             </div>
                             <!-- <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span> -->
                             <div class="col-12 mb-4">
-                                <input type="text" class="form-control p-3" placeholder="Email Address"
+                                <input type="text" name="email" class="form-control p-3" placeholder="Email Address"
                                     aria-describedby="search-icon-1">
                             </div>
                             <div class="col-12 mb-4">
-                                <input type="text" class="form-control p-3" placeholder="Phone Number"
+                                <input type="text" name="phone" class="form-control p-3" placeholder="Phone Number"
                                     aria-describedby="search-icon-1">
                             </div>
                             <div class="col-12 mb-4">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 160px"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Leave a message here"
+                                    id="message" style="height: 160px"></textarea>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="file-upload" class="form-label text-primary">Upload your Resume</label>
-                                <input type="file" class="form-control" id="file-upload" />
+                                <input type="file" class="form-control" id="file-upload" name="resume" />
                             </div>
                             <div class="col-12 mb-4">
                                 <button class="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp"
@@ -1232,8 +1232,9 @@
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
+            console.log('Form Data:', formData);
 
-            const response = await fetch('/api/consultation', {
+            const response = await fetch('http://localhost:4000/api/consultation', {
                 method: 'POST',
                 body: formData
             });
