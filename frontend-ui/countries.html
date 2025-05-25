@@ -83,45 +83,7 @@
     </div>
     <!-- Topbar End -->
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid nav-bar p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-
-                <h1 class="display-5 text-secondary m-0"><img src="img/logo_icon.png" class="img-fluid" alt=""></h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link active" data-bs-toggle="dropdown"><span class="dropdown-toggle">Our
-                                Services</span></a>
-                        <div class="dropdown-menu m-0">
-                            <a href="student-visa.html" class="dropdown-item">Student Visa</a>
-                            <a href="visitor-visa.html" class="dropdown-item">Visitor Visa</a>
-                            <a href="skill-migration.html" class="dropdown-item">Skill Migration</a>
-                            <a href="dependent-visa.html" class="dropdown-item">Parent/Dependent Visa</a>
-                            <a href="ielts.html" class="dropdown-item">IELTS / PTE</a>
-                            <a href="ticketing.html" class="dropdown-item">Ticketing and Accommodation</a>
-                        </div>
-                    </div>
-                    <a href="service.html" class="nav-item nav-link">Blog</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                </div>
-                <!-- <button class="btn btn-primary btn-md-square border-secondary mb-3 mb-md-3 mb-lg-0 me-3"
-                    data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
-                <button href=""
-                    class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"
-                    data-bs-toggle="modal" data-bs-target="#searchModal">Book a
-                    Free Consultation</button>
-            </div>
-        </nav>
-    </div>
+    <div class="navbar-container"></div>
     <!-- Navbar & Hero End -->
 
     <!-- Modal Search Start -->
@@ -327,16 +289,14 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
-                        <!-- <h4 class="text-secondary mb-4">Newsletter</h4> -->
-                        <h1 class="display-5 text-secondary m-0"><img src="img/logo_icon.png" class="img-fluid" alt="">
-                        </h1>
-                        <p class="text-white mb-3">Trusted Partner in Global Success</p>
-                        <!-- <div class="position-relative mx-auto rounded-pill">
-                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                                placeholder="Enter your email">
-                            <button type="button"
-                                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                        </div> -->
+                        <div class="footer-item">
+                            <h1 class="display-5 text-secondary mb-4"><img src="img/logo_white.png"
+                                    class="img-fluid w-75" alt="">
+                            </h1>
+                            <p class="text-white mb-3">Trusted Partner in Global Success</p>
+                        </div>
+                        <p class="text-white mb-3">Icon Placements and Visa Services is a premier provider of
+                            international student placement and migration services with high visa success rate.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
@@ -437,6 +397,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.navbar-container').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
