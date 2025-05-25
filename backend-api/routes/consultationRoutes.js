@@ -1,7 +1,8 @@
 import express from "express";
 import multer from "multer";
 import path from "path";
-import { createConsultation } from "../controllers/consultationController.js";
+import { adminDashboard, createConsultation } from "../controllers/consultationController.js";
+import authAdmin from "../middleware/authAdmin.js";
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ const upload = multer({ storage });
 
 // Route for form submission
 router.post("/", upload.single("resume"), createConsultation);
+router.get("/dashboard", authAdmin, adminDashboard);
 
 export default router;

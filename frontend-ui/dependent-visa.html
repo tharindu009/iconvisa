@@ -49,21 +49,25 @@
             <div class="col-lg-5 text-center text-lg-start mb-lg-0">
                 <div class="d-flex">
                     <a href="#" class="text-light me-4"><i
-                            class="fas fa-envelope text-secondary me-2"></i>info@iconplacements.com</a>
+                            class="fas fa-envelope text-secondary me-2"></i>info@iconvisa.com</a>
                 </div>
             </div>
             <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <!-- <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i
                             class="fab fa-twitter fw-normal text-light"></i></a> -->
-                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                        href="https://www.facebook.com/iconplacements"><i
                             class="fab fa-facebook-f fw-normal text-secondary"></i></a>
-                    <!-- <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i
-                            class="fab fa-linkedin-in fw-normal text-ligh"></i></a> -->
-                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                        href="https://www.linkedin.com/.../icon-placements-and-visa.../"><i
+                            class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                        href="https://www.instagram.com/iconvisaplacement?igsh=MWRwczZnZDdqcWFnOA=="><i
                             class="fab fa-instagram fw-normal text-secondary"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle" href=""><i
-                            class="fab fa-youtube fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle"
+                        href="https://www.tiktok.com/@iconvisa?_t=ZS-8vGrltsPbAQ&_r=1  "><i
+                            class="fab fa-tiktok fw-normal text-secondary"></i></a>
                 </div>
             </div>
 
@@ -71,7 +75,7 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <a href="#" class="text-light mx-2"><i class="fas fa-phone-alt text-secondary mx-2"></i>+94 112 822
                         913 </a>
-                    <a href="#" class="text-light mx-2"><i class="fas fa-mobile-alt text-secondary mx-2"></i>+94 720 774
+                    <a href="#" class="text-light mx-2"><i class="fas fa-mobile-alt text-secondary mx-2"></i>+94 705 774
                         788</a>
                 </div>
             </div>
@@ -84,7 +88,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
 
-                <h1 class="display-5 text-secondary m-0"><img src="img/icon_logom.png" class="img-fluid" alt=""></h1>
+                <h1 class="display-5 text-secondary m-0"><img src="img/logo_icon.png" class="img-fluid" alt=""></h1>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -104,7 +108,7 @@
                             <a href="skill-migration.html" class="dropdown-item">Skill Migration</a>
                             <a href="dependent-visa.html" class="dropdown-item active">Parent/Dependent Visa</a>
                             <a href="ielts.html" class="dropdown-item">IELTS / PTE</a>
-                            <a href="ticketing.html" class="dropdown-item">Ticketing</a>
+                            <a href="ticketing.html" class="dropdown-item">Ticketing and Accommodation</a>
                         </div>
                     </div>
                     <a href="service.html" class="nav-item nav-link">Blog</a>
@@ -112,9 +116,10 @@
                 </div>
                 <!-- <button class="btn btn-primary btn-md-square border-secondary mb-3 mb-md-3 mb-lg-0 me-3"
                     data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
-                <a href=""
-                    class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">Book a
-                    Free Consultation</a>
+                <button href=""
+                    class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"
+                    data-bs-toggle="modal" data-bs-target="#searchModal">Book a
+                    Free Consultation</button>
             </div>
         </nav>
     </div>
@@ -122,17 +127,41 @@
 
     <!-- Modal Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0" style="background-color: white;">
                 <div class="modal-header">
-                    <h4 class="modal-title text-secondary mb-0" id="exampleModalLabel">Search by keyword</h4>
+                    <h4 class="modal-title text-primary mb-0" id="exampleModalLabel">Enter your Detail!</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords"
-                            aria-describedby="search-icon-1">
-                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                    <div class="input-group w-80 mx-auto d-flex">
+                        <form id="consultationForm">
+                            <div class="col-12 mb-4">
+                                <input type="text" name="fullName" class="form-control p-3" placeholder="Full name"
+                                    aria-describedby="search-icon-1">
+                            </div>
+                            <!-- <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span> -->
+                            <div class="col-12 mb-4">
+                                <input type="text" name="email" class="form-control p-3" placeholder="Email Address"
+                                    aria-describedby="search-icon-1">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <input type="text" name="phone" class="form-control p-3" placeholder="Phone Number"
+                                    aria-describedby="search-icon-1">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <textarea class="form-control" name="message" placeholder="Leave a message here"
+                                    id="message" style="height: 160px"></textarea>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="file-upload" class="form-label text-primary">Upload your Resume</label>
+                                <input type="file" class="form-control" id="file-upload" name="resume" />
+                            </div>
+                            <div class="col-12 mb-4">
+                                <button class="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp"
+                                    data-wow-delay="0.7s" type="submit">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -196,20 +225,40 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <!-- <h4 class="text-secondary mb-4">Newsletter</h4> -->
+                        <h1 class="display-5 text-secondary m-0"><img src="img/logo_icon.png" class="img-fluid" alt="">
+                        </h1>
+                        <p class="text-white mb-3">Trusted Partner in Global Success</p>
+                        <!-- <div class="position-relative mx-auto rounded-pill">
+                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Enter your email">
+                            <button type="button"
+                                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="text-secondary mb-4">Contact Info</h4>
                         <a href=""><i class="fa fa-map-marker-alt me-2"></i> 108 C/2, Stanley Thilakaratne Mawatha,
                             Nugegoda, Sri Lanka</a>
                         <a href=""><i class="fas fa-envelope me-2"></i> info@iconplacements.com</a>
                         <a href=""><i class="fas fa-phone me-2"></i> +94 112 822 913 </a>
-                        <a href="" class="mb-3"><i class="fas fa-mobile me-2"></i> +94 720 774 788</a>
+                        <a href="" class="mb-3"><i class="fas fa-mobile me-2"></i> +94 705 774 788</a>
                         <div class="d-flex align-items-center">
-                            <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                            <a class="btn mx-1" href="https://www.facebook.com/iconplacements"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <!-- <a class="btn mx-1" href=""><i class="fab fa-twitter"></i></a> -->
-                            <a class="btn mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <!-- <a class="btn mx-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                            <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                                href="https://www.facebook.com/iconplacements"><i
+                                    class="fab fa-facebook-f fw-normal text-secondary"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                                href="https://www.linkedin.com/.../icon-placements-and-visa.../"><i
+                                    class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2"
+                                href="https://www.instagram.com/iconvisaplacement?igsh=MWRwczZnZDdqcWFnOA=="><i
+                                    class="fab fa-instagram fw-normal text-secondary"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-square rounded-circle"
+                                href="https://www.tiktok.com/@iconvisa?_t=ZS-8vGrltsPbAQ&_r=1  "><i
+                                    class="fab fa-tiktok fw-normal text-secondary"></i></a>
                         </div>
                     </div>
                 </div>
@@ -240,22 +289,11 @@
                         <a href="dependent-visa.html" class=""><i class="fas fa-angle-right me-2"></i> Parent/Dependent
                             Visa</a>
                         <a href="ielts.html" class=""><i class="fas fa-angle-right me-2"></i> IELTS / PTE</a>
-                        <a href="ticketing.html" class=""><i class="fas fa-angle-right me-2"></i> Ticketing</a>
+                        <a href="ticketing.html" class=""><i class="fas fa-angle-right me-2"></i> Ticketing and
+                            Accommodation</a>
                     </div>
                 </div>
-                <!-- <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item">
-                        <h4 class="text-secondary mb-4">Newsletter</h4>
-                        <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
-                            dolor sit amet, consectetur adipiscing elit.</p>
-                        <div class="position-relative mx-auto rounded-pill">
-                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                                placeholder="Enter your email">
-                            <button type="button"
-                                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                        </div>
-                    </div>
-                </div> -->
+
             </div>
         </div>
     </div>

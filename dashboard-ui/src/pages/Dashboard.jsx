@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { RiUserSharedLine, RiNumbersLine } from "react-icons/ri";
 
 const Dashboard = () => {
+
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const { aToken } = useContext(AdminContext);
+    const [dashData, setDashData] = useState(false);
+
+
+    const getDashboardData = async () => {
+        try {
+            const { data } = await axios.get(backendUrl + '/api/consultation/dashboard', { headers: { aToken } });
+            if (data.success) {
+                setDashData(data.dashData);
+                //console.log("Dashboard data", data.dashData);
+            }
+            else {
+                toast.error(data.message);
+            }
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
+    useEffect(() => {
+        if (aToken) {
+            getDashboardData();
+        }
+    }, [aToken]);
+
+
     return (
         <div className="container mt-4 mb-3">
             <h4 className='mb-2'>Dashboard</h4>
