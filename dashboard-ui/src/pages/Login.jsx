@@ -1,7 +1,8 @@
 import react, { useState, useContext } from 'react';
-import { AdminContext } from '../context/AdminContext';
+import { AdminContext } from '../context/AdminContext.jsx';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 
 
 const Login = () => {
@@ -23,7 +24,8 @@ const Login = () => {
 
                 if (data.success) {
                     setAToken(data.token);
-                    localStorage.setItem('aToken', data.token);
+                    // localStorage.setItem('aToken', data.token);
+                    Cookies.set('aToken', data.token, { expires: 5 }); // Set cookie to expire in 7 days
                     console.log(data.token);
                 }
                 else {

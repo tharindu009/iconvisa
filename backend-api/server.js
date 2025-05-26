@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import consultationRoutes from './routes/consultationRoutes.js';
+import adminRouter from './routes/adminRoutes.js';
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 //API endpoints
+app.use("/api/admin", adminRouter);
 app.use("/api/consultation", consultationRoutes);
 
 

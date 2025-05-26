@@ -4,6 +4,7 @@ import path from "path";
 import { adminDashboard, createConsultation } from "../controllers/consultationController.js";
 import authAdmin from "../middleware/authAdmin.js";
 
+
 const router = express.Router();
 
 // Multer setup for file uploads

@@ -42,13 +42,11 @@ const getAllConsultations = async (req, res) => {
 
 const adminDashboard = async (req, res) => {
     try {
-        const users = await userModel.find({});
+        //const users = await userModel.find({});
         const consultations = await consultationModel.find();
 
         const dashData = {
             consultations: consultations.length,
-            clients: users.length,
-            services: services.length,
             latestrequests: consultations.reverse().slice(0, 5),
         }
 
