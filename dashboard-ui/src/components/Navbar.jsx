@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../assets/react.svg'
 // import '../css/navbar.css'
 import { MdNotifications } from "react-icons/md";
@@ -6,8 +6,19 @@ import { MdAccountCircle } from "react-icons/md";
 import { MdSettings } from "react-icons/md";
 import { MdAttachMoney } from "react-icons/md";
 import { MdPowerSettingsNew } from "react-icons/md";
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const { setAToken } = useContext(AdminContext);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        Cookies.remove('aToken'); // Remove the token from cookie
+        setAToken(null); // Clear the token from context
+        navigate('/login'); // Redirect to the login page
+    };
 
     return (
         <div className="d-flex justify-content-between align-items-center text-sm py-2 border-bottom border-secondary">
@@ -47,7 +58,7 @@ const Navbar = () => {
                         <li><a className="dropdown-item d-flex align-items-center gap-2" href="#"><MdSettings /> Setting</a></li>
                         <li><a className="dropdown-item d-flex align-items-center gap-2" href="#"><MdAttachMoney /> Billing</a></li>
                         <li><hr className="dropdown-divider" /></li>
-                        <li><a className="dropdown-item d-flex align-items-center gap-2 text-danger" href="#"><MdPowerSettingsNew /> Logout</a></li>
+                        <li><a className="dropdown-item d-flex align-items-center gap-2 text-danger" href="#" onClick={handleLogout}><MdPowerSettingsNew /> Logout</a></li>
                     </ul>
                 </div>
             </div>

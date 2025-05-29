@@ -75,13 +75,13 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <div className='col-md-4 mb-3'>
-                        <div className="card text-center">
+                        {/* <div className="card text-center">
                             <div className="card-body d-flex flex-column align-items-center">
-                                {/* <img className='svg-size-2' src={assets.list_icon} alt="" /> */}
+                                <img className='svg-size-2' src={assets.list_icon} alt="" />
                                 <h5 className="card-title">Services</h5>
                                 <p className="card-text h4 text-info">23</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className='row py-2 d-flex justify-content-between'>
@@ -97,7 +97,7 @@ const Dashboard = () => {
                     <p className='col-2'>Phone No</p>
                     <p className='col-2'>Date & Time</p>
                     <p className='col-3'>Message</p>
-                    <p className='col-1'>Action</p>
+                    <p className='col-1'>Resume</p>
                 </div>
                 {dashData.latestrequests.map((item, index) => (
                     <div className='row border-bottom py-2' key={index} >

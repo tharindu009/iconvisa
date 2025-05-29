@@ -30,7 +30,7 @@ function App() {
       <div className='d-flex align-items-start'>
         <Sidebar />
         <Routes>
-          <Route path='/' element={<></>} />
+          <Route path='/' element={<Dashboard />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>

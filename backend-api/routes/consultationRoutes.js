@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Route for form submission
-router.post("/", upload.single("resume"), createConsultation);
+router.post("/save", upload.single("resume"), createConsultation);
 router.get("/dashboard", authAdmin, adminDashboard);
 
 export default router;
