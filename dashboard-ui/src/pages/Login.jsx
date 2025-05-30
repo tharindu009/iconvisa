@@ -43,11 +43,12 @@ const Login = () => {
 
     return (
         <form onSubmit={onSubmitHandler} className='min-vh-80 d-flex align-items-center'>
+            <div></div>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-12'>
-                        <p>  <br />
-                            <br /></p>
+                    <div className='col-md-12 py-5'>
+                        <h1 className='text-center text-secondary'>Welcome to <span className='text-primary'>Admin</span> Dashboard</h1>
+                        <p className='text-center text-secondary'>Please login to continue</p>
                     </div>
                 </div>
                 <div className='row'>
