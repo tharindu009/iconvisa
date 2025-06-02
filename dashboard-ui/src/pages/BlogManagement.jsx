@@ -58,39 +58,41 @@ const BlogManagement = () => {
     }, []);
 
     return (
-        <div className="container mt-4">
-            <h2>Blog Management</h2>
-            <table className="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Created At</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {blogs.map((blog) => (
-                        <tr key={blog._id}>
-                            <td>{blog.title}</td>
-                            <td>{new Date(blog.createdAt).toLocaleDateString()}</td>
-                            <td>
-                                <button
-                                    className="btn btn-warning me-2"
-                                    onClick={() => editBlog(blog._id)}
-                                >
-                                    <FaRegEdit />
-                                </button>
-                                <button
-                                    className="btn btn-danger"
-                                    onClick={() => deleteBlog(blog._id)}
-                                >
-                                    <MdDelete />
-                                </button>
-                            </td>
+        <div className="container mt-4 mb-4">
+            <h2 className='mb-3'>Blog Management</h2>
+            <div className='bg-white p-4 border rounded'>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {blogs.map((blog) => (
+                            <tr key={blog._id}>
+                                <td>{blog.title}</td>
+                                <td>{new Date(blog.createdAt).toLocaleDateString()}</td>
+                                <td>
+                                    <button
+                                        className="btn btn-warning me-2"
+                                        onClick={() => editBlog(blog._id)}
+                                    >
+                                        <FaRegEdit />
+                                    </button>
+                                    <button
+                                        className="btn btn-danger"
+                                        onClick={() => deleteBlog(blog._id)}
+                                    >
+                                        <MdDelete />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

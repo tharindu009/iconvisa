@@ -3,6 +3,7 @@ import { AdminContext } from '../context/AdminContext.jsx';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -15,6 +16,8 @@ const Login = () => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const { setAToken } = useContext(AdminContext);
 
+    const navigate = useNavigate();
+
     const onSubmitHandler = async (event) => {
         event.preventDefault();
 
@@ -25,7 +28,8 @@ const Login = () => {
                 if (data.success) {
                     setAToken(data.token);
                     // localStorage.setItem('aToken', data.token);
-                    Cookies.set('aToken', data.token, { expires: 5 }); // Set cookie to expire in 7 days
+                    Cookies.set('aToken', data.token, { expires: 5 }); // Set cookie to expire in 5 days
+                    navigate('/dashboard');
                     // console.log(data.token);
                 }
                 else {

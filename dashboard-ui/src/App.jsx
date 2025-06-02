@@ -20,6 +20,8 @@ import Login from './pages/Login';
 import CreateBlogPost from './pages/CreateBlogPost';
 import BlogManagement from './pages/BlogManagement';
 import EditBlogPost from './pages/EditBlogPost';
+import RequestList from './pages/RequestList';
+import CreateUser from './pages/CreateUser';
 
 
 function App() {
@@ -34,11 +36,14 @@ function App() {
       <div className='d-flex align-items-start'>
         <Sidebar />
         <Routes>
-          <Route path='/' element={<></>} />
+          <Route path='/' element={<Dashboard />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/all-appointments' element={<RequestList />} />
           <Route path='/blog' element={<CreateBlogPost />} />
           <Route path='/manage-blogs' element={<BlogManagement />} />
           <Route path='/edit-blog/:id' element={<EditBlogPost />} />
+          <Route path='/create-user' element={<CreateUser />} />
+          {/* Add more routes as needed */}
         </Routes>
       </div>
     </div>

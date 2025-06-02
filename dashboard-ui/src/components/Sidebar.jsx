@@ -45,11 +45,11 @@ const Sidebar = () => {
                         <MdOutlineOndemandVideo />
                         <p>Video Links</p>
                     </NavLink>
-                    {/* <NavLink to={'/customers-list'} className={({ isActive }) => `d-flex align-items-center gap-3 py-3 px-3 px-md-9 min-w-72 cursor-pointer 
+                    <NavLink to={'/create-user'} className={({ isActive }) => `d-flex align-items-center gap-3 py-3 px-3 px-md-9 min-w-72 cursor-pointer 
                         ${isActive ? 'bg-light border-3 border-end border-primary' : ''}`}>
                         <GrUserSettings />
-                        <p>Users</p>
-                    </NavLink> */}
+                        <p>Create User</p>
+                    </NavLink>
                 </ul>
             }
             </div>

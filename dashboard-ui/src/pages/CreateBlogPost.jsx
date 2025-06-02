@@ -53,23 +53,24 @@ const CreateBlogPost = () => {
     };
 
     return (
-        <div className="container mt-4">
-            <h2>Create New Blog Post</h2>
+        <div className="container mt-4 mb-4">
+            <h2 className='mb-3'>Create New Blog Post</h2>
             <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="title" className="form-label">Title</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="content" className="form-label">Content</label>
-                    {/* <textarea
+                <div className='bg-white p-4 border rounded'>
+                    <div className="mb-3">
+                        <label htmlFor="title" className="form-label">Title</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="content" className="form-label">Content</label>
+                        {/* <textarea
                         className="form-control"
                         id="content"
                         rows="5"
@@ -77,20 +78,22 @@ const CreateBlogPost = () => {
                         onChange={(e) => setContent(e.target.value)}
                         required
                     ></textarea> */}
-                    <Editor value={content} onTextChange={(e) => setContent(e.htmlValue)} style={{ height: '320px' }} />
+                        <Editor value={content} onTextChange={(e) => setContent(e.htmlValue)} style={{ height: '320px' }} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="image" className="form-label">Image</label>
+                        <input
+                            type="file"
+                            className="form-control"
+                            id="image"
+                            onChange={handleImageChange}
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                        Create Post
+                    </button>
+
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="image" className="form-label">Image</label>
-                    <input
-                        type="file"
-                        className="form-control"
-                        id="image"
-                        onChange={handleImageChange}
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">
-                    Create Post
-                </button>
             </form>
         </div>
     );

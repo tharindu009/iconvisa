@@ -1,18 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { RiUserSharedLine, RiNumbersLine } from "react-icons/ri";
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import { AdminContext } from '../context/AdminContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-const Dashboard = () => {
+
+
+const RequestList = () => {
+
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const { aToken } = useContext(AdminContext);
     const [dashData, setDashData] = useState({ consultations: 0, latestrequests: [] });
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(5); // You can change this value
+    const [itemsPerPage] = useState(10); // You can change this value
     const [pageNumberLimit] = useState(5);
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
@@ -30,18 +32,6 @@ const Dashboard = () => {
             toast.error(error.message);
         }
     };
-
-    const getTodayRequests = () => {
-        const today = new Date();
-        const todayDateString = today.toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-
-        return dashData.latestrequests.filter((request) => {
-            const requestDate = new Date(request.requestDate).toISOString().split('T')[0];
-            return requestDate === todayDateString;
-        });
-    };
-
-    const todayRequests = getTodayRequests();
 
     useEffect(() => {
         if (aToken) {
@@ -71,6 +61,7 @@ const Dashboard = () => {
     const handleClick = (event) => {
         setCurrentPage(Number(event.target.id));
     };
+
 
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(dashData.latestrequests.length / itemsPerPage); i++) {
@@ -112,6 +103,7 @@ const Dashboard = () => {
         }
     };
 
+
     let pageIncrementBtn = null;
     if (pageNumbers.length > maxPageNumberLimit) {
         pageIncrementBtn = <li onClick={handleNextbtn}> &hellip; </li>;
@@ -122,35 +114,13 @@ const Dashboard = () => {
         pageDecrementBtn = <li onClick={handlePrevbtn}> &hellip; </li>;
     }
 
+
+
+
     return (
         <div className="container mt-4 mb-3">
-            <h4 className='mb-2'>Dashboard</h4>
+            <h4 className='mb-3'>All Inquiries</h4>
             <div className='bg-white p-4 border rounded'>
-                <div className='row'>
-                    <div className='col-md-4 mb-3'>
-                        <div className="card text-center">
-                            <div className="card-body d-flex flex-column align-items-center">
-                                <RiUserSharedLine size={50} className='text-info' />
-                                <h5 className="card-title">New Requests</h5>
-                                <p className="card-text h4 text-info">{todayRequests.length}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-md-4 mb-3'>
-                        <div className="card text-center">
-                            <div className="card-body d-flex flex-column align-items-center">
-                                <RiNumbersLine size={50} className='text-info' />
-                                <h5 className="card-title">Total Requests</h5>
-                                <p className="card-text h4 text-info">{dashData.consultations}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='row py-2 d-flex justify-content-between'>
-                    <hr />
-                    <h5>Latest Inquiries</h5>
-                </div>
-
                 <div className='row border-bottom py-3 bg-body-secondary text-bold'>
                     <p className='col-2'>Customer Name</p>
                     <p className='col-2'>Email</p>
@@ -197,7 +167,7 @@ const Dashboard = () => {
                 </ul>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Dashboard;
+export default RequestList
