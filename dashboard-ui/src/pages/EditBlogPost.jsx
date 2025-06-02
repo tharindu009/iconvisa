@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AdminContext } from '../context/AdminContext';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Editor } from "primereact/editor";
 
 const EditBlogPost = () => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -88,14 +89,15 @@ const EditBlogPost = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="content" className="form-label">Content</label>
-                    <textarea
+                    {/* <textarea
                         className="form-control"
                         id="content"
                         rows="5"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         required
-                    ></textarea>
+                    ></textarea> */}
+                    <Editor value={content} onTextChange={(e) => setContent(e.htmlValue)} style={{ height: '320px' }} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="image" className="form-label">Image</label>

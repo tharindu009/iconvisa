@@ -33,7 +33,12 @@ const Sidebar = () => {
                     <NavLink to={'/blog'} className={({ isActive }) => `d-flex align-items-center gap-3 py-3 px-3 px-md-9 min-w-72 cursor-pointer 
                         ${isActive ? 'bg-light border-3 border-end border-primary' : ''}`}>
                         <CiViewList />
-                        <p>Blog</p>
+                        <p>Create Blog</p>
+                    </NavLink>
+                    <NavLink to={'/manage-blogs'} className={({ isActive }) => `d-flex align-items-center gap-3 py-3 px-3 px-md-9 min-w-72 cursor-pointer 
+                        ${isActive ? 'bg-light border-3 border-end border-primary' : ''}`}>
+                        <CiViewList />
+                        <p>Blog List</p>
                     </NavLink>
                     <NavLink to={'/service-list'} className={({ isActive }) => `d-flex align-items-center gap-3 py-3 px-3 px-md-9 min-w-72 cursor-pointer 
                         ${isActive ? 'bg-light border-3 border-end border-primary' : ''}`}>

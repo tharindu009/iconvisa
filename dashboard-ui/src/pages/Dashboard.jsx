@@ -31,6 +31,18 @@ const Dashboard = () => {
         }
     };
 
+    const getTodayRequests = () => {
+        const today = new Date();
+        const todayDateString = today.toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+
+        return dashData.latestrequests.filter((request) => {
+            const requestDate = new Date(request.requestDate).toISOString().split('T')[0];
+            return requestDate === todayDateString;
+        });
+    };
+
+    const todayRequests = getTodayRequests();
+
     useEffect(() => {
         if (aToken) {
             getDashboardData();
@@ -120,7 +132,7 @@ const Dashboard = () => {
                             <div className="card-body d-flex flex-column align-items-center">
                                 <RiUserSharedLine size={50} className='text-info' />
                                 <h5 className="card-title">New Requests</h5>
-                                <p className="card-text h4 text-info">{dashData.consultations}</p>
+                                <p className="card-text h4 text-info">{todayRequests.length}</p>
                             </div>
                         </div>
                     </div>

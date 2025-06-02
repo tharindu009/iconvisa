@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import authAdmin from '../middleware/authAdmin.js'; // Assuming you have an admin auth middleware
-import { createBlogPost, getBlogPostById } from '../controllers/blogController.js';
+import { createBlogPost, getBlogPostById, updateBlogPost } from '../controllers/blogController.js';
 import blogPost from '../models/blogPost.js';
 
 const router = express.Router();
@@ -35,5 +35,6 @@ router.get('/posts', async (req, res) => {
 
 router.get('/:id', getBlogPostById);
 
+router.put('/:id', authAdmin, upload.single('image'), updateBlogPost);
 
 export default router;

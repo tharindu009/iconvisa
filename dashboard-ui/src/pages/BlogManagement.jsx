@@ -3,6 +3,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AdminContext } from '../context/AdminContext';
 import { useNavigate } from 'react-router-dom';
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const BlogManagement = () => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -76,13 +78,13 @@ const BlogManagement = () => {
                                     className="btn btn-warning me-2"
                                     onClick={() => editBlog(blog._id)}
                                 >
-                                    Edit
+                                    <FaRegEdit />
                                 </button>
                                 <button
                                     className="btn btn-danger"
                                     onClick={() => deleteBlog(blog._id)}
                                 >
-                                    Delete
+                                    <MdDelete />
                                 </button>
                             </td>
                         </tr>

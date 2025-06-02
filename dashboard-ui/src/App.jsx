@@ -10,6 +10,7 @@ import '../src/css/globals/util.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import '../src/css/styles.css'
+import '../src/css/dashboard.css'
 import Sidebar from './components/Sidebar'
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from './components/Navbar'
