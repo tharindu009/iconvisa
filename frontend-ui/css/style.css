@@ -979,3 +979,25 @@
 }
 
 /*** copyright end ***/
+
+
+/* Blog Detail Styles */
+.blog-detail img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.blog-detail h1 {
+    color: #1C1F35;
+    font-weight: 600;
+}
+
+.blog-detail #blog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.blog-detail #blog-content p {
+    margin-bottom: 1.5rem;
+}

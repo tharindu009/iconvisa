@@ -4,6 +4,7 @@ import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import consultationRoutes from './routes/consultationRoutes.js';
 import adminRouter from './routes/adminRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/uploads', express.static('uploads'));
 //API endpoints
 app.use("/api/admin", adminRouter);
 app.use("/api/consultation", consultationRoutes);
+app.use("/api/blog", blogRoutes);
 
 
 app.get("/", (req, res) => {

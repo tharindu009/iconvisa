@@ -16,6 +16,9 @@ import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/dashboard'
 import Login from './pages/Login';
+import CreateBlogPost from './pages/CreateBlogPost';
+import BlogManagement from './pages/BlogManagement';
+import EditBlogPost from './pages/EditBlogPost';
 
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
         <Routes>
           <Route path='/' element={<></>} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/blog' element={<CreateBlogPost />} />
+          <Route path='/manage-blogs' element={<BlogManagement />} />
+          <Route path='/edit-blog/:id' element={<EditBlogPost />} />
         </Routes>
       </div>
     </div>

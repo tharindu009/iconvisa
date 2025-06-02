@@ -26,7 +26,7 @@ const Login = () => {
                     setAToken(data.token);
                     // localStorage.setItem('aToken', data.token);
                     Cookies.set('aToken', data.token, { expires: 5 }); // Set cookie to expire in 7 days
-                    console.log(data.token);
+                    // console.log(data.token);
                 }
                 else {
                     toast.error(data.message);
