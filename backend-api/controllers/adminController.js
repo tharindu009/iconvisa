@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import User from '../models/user.js';
-import mongoose from 'mongoose';
 // Assuming you have a User model defined in models/User.js
 
 
@@ -10,7 +9,7 @@ const loginAdmin = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        //console.log(email);
+        console.log(email);
 
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
 
@@ -21,7 +20,24 @@ const loginAdmin = async (req, res) => {
         }
         else {
 
-            res.json({ success: false, message: "Invalid credentials" });
+            // Find user by email
+            const user = await User.findOne({ email });
+            if (!user) {
+
+                return res.status(404).json({ success: false, message: 'User not found' });
+            }
+
+            // Verify password
+            const isPasswordValid = await bcrypt.compare(password, user.password);
+            if (!isPasswordValid) {
+                return res.status(401).json({ success: false, message: 'Invalid password' });
+            }
+
+            // Generate JWT token
+            const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '5d' });
+
+            res.status(200).json({ success: true, token });
+            // res.json({ success: false, message: "Invalid credentials" });
 
         }
     }

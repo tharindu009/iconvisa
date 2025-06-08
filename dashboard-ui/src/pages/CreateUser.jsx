@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { AdminContext } from '../context/AdminContext';
+
 
 const CreateUser = () => {
     const [fullName, setFullName] = useState('');
@@ -9,18 +11,22 @@ const CreateUser = () => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const [users, setUsers] = useState([]);
 
-    // Fetch all users
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const { data } = await axios.get(`${backendUrl}/api/admin/users`);
-                setUsers(data.users);
-            } catch (error) {
-                console.error(error);
-                toast.error('Failed to fetch users.');
-            }
-        };
+    const { aToken } = useContext(AdminContext);
 
+    // Fetch all users
+    const fetchUsers = async () => {
+        try {
+            const { data } = await axios.get(`${backendUrl}/api/admin/users`, {
+                headers: { 'aToken': aToken },
+            });
+            setUsers(data.users);
+        } catch (error) {
+            console.error(error);
+            toast.error('Failed to fetch users.');
+        }
+    };
+
+    useEffect(() => {
         fetchUsers();
     }, []);
 
@@ -32,13 +38,15 @@ const CreateUser = () => {
                 fullName,
                 email,
                 password,
-            });
+            },
+                { headers: { 'aToken': aToken } });
 
             if (data.success) {
                 toast.success('User created successfully!');
                 setFullName('');
                 setEmail('');
                 setPassword('');
+                fetchUsers(); // Refresh the user list
             } else {
                 toast.error(data.message);
             }
@@ -51,10 +59,11 @@ const CreateUser = () => {
     // Delete a user
     const deleteUser = async (userId) => {
         try {
-            const { data } = await axios.delete(`${backendUrl}/api/admin/delete-user/${userId}`);
+            const { data } = await axios.delete(`${backendUrl}/api/admin/delete-user/${userId}`, { headers: { 'aToken': aToken } });
             if (data.success) {
                 toast.success('User deleted successfully!');
                 setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId)); // Remove the user from the list
+
             } else {
                 toast.error(data.message);
             }

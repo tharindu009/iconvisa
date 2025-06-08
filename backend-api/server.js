@@ -27,6 +27,14 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 
+app.use((req, res, next) => {
+    res.setHeader(
+        "Content-Security-Policy",
+        "default-src 'self'; img-src 'self' https://admin.iconvisa.com;"
+    );
+    next();
+});
+
 
 app.use('/uploads', express.static('uploads'));
 
